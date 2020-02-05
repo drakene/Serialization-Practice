@@ -52,4 +52,13 @@ class StudentTestCases implements SerializationTestFormatting {
 		}
 	}
 
+	@Test
+	void testSerializeBinary() {
+		Student newStudNoah;
+		StudentSerializer.serialize(studNoah, "testBinary.ser");
+
+		newStudNoah = StudentSerializer.deserialize("testBinary.ser");
+		System.out.println("Serialized student is equal to deserialized student: " + studNoah.equals(newStudNoah));
+	}
+
 }
